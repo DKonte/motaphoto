@@ -12,12 +12,12 @@
             </div>
             <nav class="header-nav">
                 <?php
-                    wp_nav_menu([
+                    wp_nav_menu( array(
                         'theme_location' => 'main-menu',
-                    ]);
+                        'menu_id'        => 'main-menu',
+                        'container_class' => 'main-navigation', // classe CSS pour customiser mon menu
+                    ) );
                 ?>
-                <ul>
-                </ul>
             </nav>
         </section>
     </header>
