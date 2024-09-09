@@ -78,6 +78,32 @@
 </section>
 
 <section class="photos">
+    <!-- Récupération des photos -->
+  <div class="photo_type organisation">
+    <?php
+            $photos = new WP_Query([
+                'post_type' => 'photo',
+                'orderby' => 'date',
+                'order' => 'DESC',
+                'posts_per_page' => 4,
+                'paged' => 1, ]
+            );
+            if ($photos->have_posts()) {
+                while ($photos->have_posts()) {
+                    include 'templates-parts/photo-block.php';
+                }
+            } else {
+                echo '';
+            }
+            wp_reset_postdata();
+        ?>
+  </div>
+  <!--Bouton charger plus-->
+  <div class="charger_plus_btn" id="charger_plus">
+    <input type="button" style="text-align: center;" value="Charger plus">
+    <img id="btn-charger_plus" src="<?php echo get_template_directory_uri(); ?>/assets/images/camera_icon.png"
+      alt="Icône d'appareil photo" />
+  </div>
 </section>
 
 <?php get_footer(); ?>

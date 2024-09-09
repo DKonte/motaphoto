@@ -4,56 +4,56 @@
     font-style: normal;
     font-weight: 400; /* Normal */
     src: url('../fonts/Space_Mono/SpaceMono-Regular.ttf') format('truetype'); /* Format TTF */
-  }
+}
   
-  @font-face {
+@font-face {
     font-family: 'Space Mono';
     font-style: normal;
     font-weight: 700; /* Gras */
     src: url('../fonts/Space_Mono/SpaceMono-Regular.ttf') format('truetype'); /* Format TTF */
-  }
+}
   
-  @font-face {
+@font-face {
     font-family: 'Space Mono';
     font-style: italic;
     font-weight: 400; /* Normal */
     src: url('../fonts/Space_Mono/SpaceMono-Italic.ttf') format('truetype'); /* Format TTF */
-  }
+}
   
-  @font-face {
+@font-face {
     font-family: 'Space Mono';
     font-style: italic;
     font-weight: 700; /* Gras */
     src: url('../fonts/Space_Mono/SpaceMono-Italic.ttf') format('truetype'); /* Format TTF */
-  }
+}
   /* Pour la police Poppins */
-  @font-face {
+@font-face {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400; /* Normal */
     src: url('../fonts/Poppins/Poppins-Regular.ttf') format('truetype'); /* Format TTF */
-  }
+}
   
-  @font-face {
+@font-face {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700; /* Gras */
     src: url('../fonts/Poppins/Poppins-Regular.ttf') format('truetype'); /* Format TTF */
-  }
+}
   
-  @font-face {
+@font-face {
     font-family: 'Poppins';
     font-style: italic;
     font-weight: 400; /* Normal */
     src: url('../fonts/Poppins/Poppins-Italic.ttf') format('truetype'); /* Format TTF */
-  }
+}
   
-  @font-face {
+@font-face {
     font-family: 'Poppins';
     font-style: italic;
     font-weight: 700; /* Gras */
     src: url('../fonts/Poppins/Poppins-Italic.ttf') format('truetype'); /* Format TTF */
-  }
+}
 
 /*header*/
 
@@ -97,7 +97,7 @@
     justify-content: space-between;
 }
 
- /*footer*/
+/*footer*/
 .footer {
   position: relative;
   bottom: 0;
@@ -194,5 +194,266 @@ nav {
     text-transform: uppercase;
 }
 #select-ordre #ordre {
+    text-transform: uppercase;
+}
+
+/*** photos ***/
+
+.photos {
+    padding-top: 32px !important;
+    width: 80%;
+    padding: 0 10%;
+}
+.photo_type {
+    flex-wrap: wrap;
+}
+.organisation {
+    display: flex;
+    justify-content: space-between;
+}
+    
+.half {
+    width: 49.2%;
+}
+
+/*** post_photo ***/ 
+
+.post_photo {
+    height: 74vh;
+    margin-bottom: 20px;
+}
+  
+.post_photo .img-photo {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+    display: block;
+}
+  
+.post_photo>div {
+  display: inline;
+}
+  
+.post_photo>div:hover .photo-hover {
+  opacity: 1;
+}
+  
+.post_photo .photo-hover {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    margin-top: -74vh;
+    opacity: 0;
+    position: relative;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.92) 100%);
+}
+  
+.post_photo .photo-hover .full-screen {
+    width: 35px;
+    height: 35px;
+    align-self: flex-end;
+    margin-top: 2%;
+    margin-right: 2%;
+    cursor: pointer;
+}
+  
+.post_photo .photo-hover a {
+    width: 46px;
+    height: 46px;
+    margin: auto;
+}
+  
+.post_photo .photo-hover a .oeil {
+    width: 100%;
+    height: auto;
+}
+  
+.post_photo .photo-hover .photo-infos {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-bottom: 2%;
+}
+  
+.post_photo .photo-hover .photo-infos p:last-child {
+  font-family: "Space Mono", monospace;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+  
+.post_photo .photo-hover .photo-infos p:first-child {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+/*** charger plus ***/
+
+.charger_plus_btn {
+    margin: 27px auto 47px auto;
+    width: 120px;
+    height: 34px;
+}
+  
+.charger_plus_btn input {
+    width: 100%;
+    height: 100%;
+    font-family: "Space Mono", monospace;
+    background-color: #D8D8D8;
+    font-size: 12px;
+    border: none;
+    border-radius: 2px;
+}
+  
+.charger_plus_btn img {
+    cursor: pointer;
+    background-color: black;
+    padding: 9px 52px;
+    opacity: 0;
+    position: absolute;
+    width: 16px;
+    margin-left: -120px;
+    transition: all 350ms ease-in-out;
+    border-radius: 2px;
+}
+  
+.charger_plus_btn img:hover {
+  opacity: 1;
+}
+
+/*** single ***/
+
+.single-page {
+    width: 80%;
+    padding: 0 10%;
+}
+    
+    
+.single-photo {
+    margin-top: 38px;
+    font-family: "Space Mono", monospace;
+}
+    
+.single-description {
+    border-bottom: 1px solid black;
+    align-self: flex-end;
+    padding-bottom: 43px;
+}
+    
+.single-image {
+    object-fit: contain;
+}
+    
+.single-photo h1 {
+    font-style: italic;
+    padding-bottom: 40px;
+    width: 70%;
+    margin-left: -1%;
+}
+    
+.single-photo p {
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding-bottom: 9px;
+}
+
+.interaction-photo {
+    height: 118px;
+    border-bottom: 1px solid black;
+}
+    
+.interaction-photo>div {
+    display: flex;
+    align-items: center;
+}
+    
+.interaction-photo__btn {
+    width: 142px;
+}
+    
+.interaction-photo__navigation {
+    width: 108px;
+    display: flex;
+    flex-direction: column;
+}
+    
+.interaction-photo__navigation .preview {
+    width: 78px;
+    height: 50%;
+    margin: auto 0 auto auto;
+}
+    
+.interaction-photo__navigation .preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+}
+    
+.interaction-photo__navigation .preview .previous-image {
+    margin-top: 38%;
+}
+    
+.interaction-photo__navigation .preview .next-image {
+    margin-top: -38%;
+}
+    
+.interaction-photo__navigation .arrows {
+    width: 108px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    margin-top: 92px;
+}
+    
+.interaction-photo__navigation .arrows .arrow {
+    width: 25px;
+    cursor: pointer;
+}
+    
+.wpcf7-text {
+      text-transform: uppercase;
+}
+
+.recommandations {
+    padding-top: 77px;
+}
+    
+.recommandations h2 {
+    padding-bottom: 40px;
+    font-family: "Space Mono", monospace;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+    
+.recommandations__btn {
+    width: 214px;
+    display: block;
+    margin: 51px auto 71px auto;
+}
+    
+.texte {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    margin-right: 28px;
+}
+    
+h1 {
+    font-family: "Space Mono", monospace;
+    font-weight: 400;
+    font-size: 66px;
+    line-height: 65px;
     text-transform: uppercase;
 }
