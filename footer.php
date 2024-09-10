@@ -1,3 +1,4 @@
+<?php get_template_part('templates-parts/lightbox'); ?>
 <footer class="footer">
     <nav class="footer_nav">
     <div class="footer-links">
