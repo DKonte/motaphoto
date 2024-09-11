@@ -1,4 +1,7 @@
-<?php get_template_part('templates-parts/lightbox'); ?>
+<?php  
+get_template_part('templates-parts/lightbox');
+get_template_part('templates-parts/modale');
+?>
 <footer class="footer">
     <nav class="footer_nav">
     <div class="footer-links">

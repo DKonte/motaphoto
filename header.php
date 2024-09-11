@@ -8,7 +8,7 @@
     <header>
         <section class="header">
             <div>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-site.png" alt="Logo de Nathalie Mota" />
+            <a href="<?php echo home_url( '/' ); ?>"><img class="header_logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/Logo.png" alt="Logo NMota" id="logo"></a>
             </div>
             <nav class="header-nav">
                 <?php

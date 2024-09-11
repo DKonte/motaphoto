@@ -58,12 +58,12 @@ jQuery(document).ready(function($) {
 
     /*** afficher le post selectionné ***/
     $('.full-screen').on('click', function () {
-    image = $(this).parent().parent().prev();
-    var urlImage = image.attr('src');
-    let ref = image.attr('data-ref');
-    let categorie = image.attr('data-categorie');
-    afficher_lightbox(urlImage, ref, categorie);
-    console.log(urlImage)
+        image = $(this).parent().parent().prev();
+        var urlImage = image.attr('src');
+        let ref = image.attr('data-ref');
+        let categorie = image.attr('data-categorie');
+        afficher_lightbox(urlImage, ref, categorie);
+        console.log(urlImage)
     });
 
     /*** afficher le post précédent ***/
@@ -92,18 +92,49 @@ jQuery(document).ready(function($) {
 
     /*** fonction qui permet de rajouter les informations dans les balises html du template part lightbox ***/
     function afficher_lightbox(urlImage, ref, categorie) {
-    $("#lightbox__container_content").empty();
-    var infos = "<div class='lightbox__infos'><p>"+ref+"</p><p>"+categorie+"</p>";
-    var creerImage = '<img src="' + urlImage + '" alt="Image agrandie">';
-    $('.lightbox__container_content').append(creerImage);
-    $('.lightbox__container_content').append(infos);
-    $("#lightbox__container_content").removeClass("hidden");
-    $('.lightbox').css('display', 'block');
+        $("#lightbox__container_content").empty();
+        var infos = "<div class='lightbox__infos'><p>"+ref+"</p><p>"+categorie+"</p>";
+        var creerImage = '<img src="' + urlImage + '" alt="Image agrandie">';
+        $('.lightbox__container_content').append(creerImage);
+        $('.lightbox__container_content').append(infos);
+        $("#lightbox__container_content").removeClass("hidden");
+        $('.lightbox').css('display', 'block');
     }
     /*** fermer la lighbox ***/
     $(document).on('click', '.lightbox__close', function () {
-    $('.lightbox').css('display', 'none');
-    $("#lightbox__container_content").empty();
+        $('.lightbox').css('display', 'none');
+        $("#lightbox__container_content").empty();
     });
+
+    /*** Modal ***/
+  var modale = document.getElementById('myModal');
+    $('#menu-item-25, .interaction-photo__btn').click(function () {
+        console.log('ok');
+        $(modale).css('display', 'flex');
+    });
+    window.onclick = function (event) {
+        if (event.target == modale) {
+            $(modale).css('display', 'none');
+        }
+    };
+    $('.interaction-photo__btn').click(function () {
+        var reference = $('#reference-photo').text();
+        $('#ref').val(reference);
+    });
+
+/*** flèches de navigation ***/
+    navigationPhotos($('.arrow-gauche'), $('.previous-image'));
+    navigationPhotos($('.arrow-droite'), $('.next-image'));
+
+    function navigationPhotos(arrow, image) {
+        arrow.hover(
+            function () {
+                image.css('opacity', '1');
+            },
+            function () {
+                image.css('opacity', '0');
+            }
+        );
+    }
 
 });
