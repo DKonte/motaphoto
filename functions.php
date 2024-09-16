@@ -20,7 +20,7 @@ add_action('after_setup_theme', 'register_footer_menu');
 
 function motaphoto_enqueue_scripts() {
     // Enqueue le script JavaScript avec URL absolue
-    wp_enqueue_script('main-js', get_template_directory_uri() . '/assets/js/script.js', array('jquery'), '', true);
+    wp_enqueue_script('main-js', get_template_directory_uri() . '/assets/js/script.js', array('jquery'), true);
     wp_localize_script('main-js', 'my_ajax_obj', ['ajax_url' => admin_url('admin-ajax.php')]);
 }
 add_action('wp_enqueue_scripts', 'motaphoto_enqueue_scripts');
@@ -30,7 +30,7 @@ function chargerPlus() {
         'post_type' => 'photo',
         'orderby' => 'date',
         'order' => $_POST['ordre'],
-        'posts_per_page' => 4,
+        'posts_per_page' => 8,
         'paged' => $_POST['page'],
         'tax_query' => [
                 'relation' => 'AND',

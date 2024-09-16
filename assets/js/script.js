@@ -12,7 +12,7 @@ jQuery(document).ready(function($) {
   });
       /***  la requête ajax vers le serveur wordpress pour récupérer les posts selon les critères de l'utilisateur 
      *    url: contient l'url vers /admin-ajax.php
-     *    action : la fonction filtrer du fichier functions.php
+     *    action : la fonction chargerPlus du fichier functions.php
      *    data: la catégorie souhaitée categorieSelection et format formatSelection et l'ordre puis la page actuelle
      *    le button charger plus permet de faire un append() rajouter des posts au post existant et les filtres permettent de faire
      *    html() afficher un nouveau contenu
@@ -136,5 +136,25 @@ jQuery(document).ready(function($) {
             }
         );
     }
+
+/*** Menu Burger ***/
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggleButton = document.getElementById('toggle');
+        const navMenu = document.getElementById('nav_header');
+
+        toggleButton.addEventListener('click', function() {
+            navMenu.classList.toggle('visible'); 
+        });
+    });
+
+    $('#toggle').on('click', function() {
+        $('#nav_header').toggleClass('visible');
+        // Toggle entre "☰" et ":signe_de_multiplication_trait_plein:"
+        if ($(this).text() === "☰") {
+            $(this).text(":signe_de_multiplication_trait_plein:");
+        } else {
+            $(this).text("☰");
+        }
+    });
 
 });

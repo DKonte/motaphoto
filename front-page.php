@@ -85,7 +85,7 @@
                 'post_type' => 'photo',
                 'orderby' => 'date',
                 'order' => 'DESC',
-                'posts_per_page' => 4,
+                'posts_per_page' => 8,
                 'paged' => 1, ]
             );
             if ($photos->have_posts()) {

@@ -55,6 +55,13 @@
     src: url('../fonts/Poppins/Poppins-Italic.ttf') format('truetype'); /* Format TTF */
 }
 
+main {
+    max-width: 1980px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
 /*header*/
 
 .header {
@@ -70,10 +77,8 @@
     width: 216px;
     margin-top: 4px;
 }
-
-.main-navigation {
-    display: flex;
-    justify-content: flex-end;
+.menu-toggle {
+    display: none;
 }
 #main-menu {
     display: flex;
@@ -176,10 +181,6 @@ nav {
     padding-top: 32px !important;
     width: 80%;
     padding: 0 10%;
-}
-.organisation {
-    display: flex;
-    justify-content: space-between;
 }
 .half {
     width: 49.2%;
@@ -386,6 +387,9 @@ nav {
     left: 477px;
     position: absolute;
     height: 50px;
+    font-family: 'Space Mono';
+    font-weight: 400;
+
 }
     
 .interaction-photo__navigation {
@@ -433,7 +437,7 @@ nav {
 }
 
 .recommandations {
-    padding-top: 77px;
+    padding-top: 4%;
 }
     
 .recommandations h2 {
@@ -522,6 +526,16 @@ h1 {
 .lightbox__next {
     background: url("../images/next_white.svg") center center / 100% 100% no-repeat;
     right: 100px;
+}
+.precedente-lightbox {
+    position: absolute;
+    top: 370px;
+    left: 140px;
+}
+.suivante-lightbox {
+    position: absolute;
+    top: 370px;
+    left: 880px;
 }
 .lightbox .lightbox__container {
     position: fixed;
@@ -655,6 +669,7 @@ input.wpcf7-form-control {
 }
   textarea.wpcf7-form-control {
     width:43%;
+    height: 210px;
 }
 .modal-content {
     position: relative;
@@ -665,7 +680,7 @@ input.wpcf7-form-control {
     padding: 0;
     border: 3px solid #000000;
     width: 35vw;
-    height: 90vh;
+    height: 95vh;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 1.5s;
@@ -685,3 +700,192 @@ input.wpcf7-form-control {
     to {top: 0; opacity: 1}
 }
 
+/*** Media Queries ***/
+
+@media (max-width: 400px) {
+
+.header {
+    margin-top: -10%;
+}
+.header_logo {
+    margin-left: 20px;
+    width: 138px;
+    margin-top: 20%;
+}
+.main-navigation {
+    display: flex;
+    align-items: center;
+}
+.menu-toggle {
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-right: 5%;
+    font-size: 30px;
+    color: ffffff;
+    cursor: pointer;
+    margin-top: 7%;
+}
+#nav_header {
+    display: none;
+    position: absolute;
+    top: 12%; /* Place le menu de navigation sous l'icône burger */
+    left: 0; /* Aligne le menu de navigation sur la gauche */
+    width: 100%; /* Assure que le menu de navigation prend toute la largeur */
+    height: 102%;
+    background-color: white; /* Ajoute un fond blanc */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1); /* Ajoute une ombre */
+    z-index: 2; /* Assure que le menu de navigation est au-dessus du contenu */
+    justify-content: center;
+    text-align: center; /* Centre les éléments du menu */
+}
+      
+section.hero {
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* Assurez-vous que le contenu débordant est caché */
+    max-height: 30vh;
+}
+      
+.hero_image {
+    position: relative;
+    width: 100%;
+    max-height: 30vh; /* Limitez la hauteur de l'image à 30% de la hauteur de la vue */
+    z-index: 0;
+    box-sizing: border-box;
+}
+      
+.hero h1 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    align-self: center;
+    transform: translate(-50%, -50%); /* Centrez le titre */
+    font-family: "Space Mono", monospace;
+    font-style: italic;
+    font-size: 6.3vw;
+    text-transform: uppercase;
+    text-shadow: 3px 0 #fff, -3px 0 #fff, 0 3px #fff, 0 -3px #fff, 3px 3px #fff, -3px -3px #fff, 3px -3px #fff, -3px 3px #fff;
+    mix-blend-mode: lighten;
+    z-index: 1;
+    white-space: nowrap;
+}
+      
+      
+/* Affiche le menu de navigation en mode responsive */
+#nav_header.visible {
+        display: flex;
+        justify-content: center;
+}
+      
+/* Affiche les éléments du menu de navigation en dessous les uns des autres */
+#nav_header ul {
+    display: block; /* Change l'affichage en bloc */
+    padding: 0; /* Supprime les marges */
+    margin-top: 60%; 
+}
+      
+#nav_header li {
+    display: block; /* Change l'affichage en bloc */
+    margin: 0; /* Supprime les marges */
+    font-size: 44px;
+         
+}
+      
+#nav_header a {
+    display: block; /* Change l'affichage en bloc */
+    padding: 10px 0; /* Ajoute un espacement entre les éléments du menu */
+    color: black; /* Couleur du texte */
+    text-decoration: none; /* Supprime les soulignements */
+}
+#wpadminbar {
+    display: none;
+}
+.footer_nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.filtres.organisation {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+      
+#format {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+        
+}
+
+.filtres select {
+    width: 100%;
+}
+.organisation {
+    display: flex; 
+    flex-direction: column-reverse;
+}
+.half {
+    width: 100%;
+}
+.post_photo {
+    height: 35vh;
+}
+.post_photo .photo-hover {
+    margin-top: -35vh;
+}
+.texte {
+    margin-left: 12px;
+    margin-bottom: 28%;
+}
+.interaction-photo__btn {
+    left: 55px;
+    position: absolute;
+    top: 1180px;
+    width: 263px;
+}
+.interaction-photo__navigation .arrows {
+    display: none;
+}
+.recommandations h2 {
+    margin-left: 10%;
+    padding-bottom: 2%;
+}
+.modal-content {
+    width: 100%;
+    height:100%;
+}
+.wpcf7-form {
+    margin-left:-30px;
+}
+textarea.wpcf7-form-control {
+    width:60%;
+    height: 150px;
+}
+input.wpcf7-form-control {
+    width:60%;
+    height: 50px;
+}
+#menu-item-59 {
+    margin-right: 10%;
+}
+#menu-item-60 {
+     margin-right: 10%;
+}
+.vie-privee {
+    margin-left: 25%;
+}
+.mentions-legales {
+    margin-left: 10%;
+}
+}
