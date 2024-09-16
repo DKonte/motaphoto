@@ -844,6 +844,24 @@ section.hero {
 .post_photo .photo-hover {
     margin-top: -35vh;
 }
+.lightbox__next {
+    right: -20px;
+}
+.lightbox__prev {
+    left: -47px;
+}
+.suivante-lightbox {
+    font-size: 10px;
+    position: absolute;
+    top: 315px;
+    left: 230px;
+}
+.precedente-lightbox {
+    font-size: 9px;
+    position: absolute;
+    top: 315px;
+    left: -25px;
+}
 .texte {
     margin-left: 12px;
     margin-bottom: 28%;
